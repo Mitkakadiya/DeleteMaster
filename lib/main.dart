@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Delete Master',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: ImageGalleryPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

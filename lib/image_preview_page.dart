@@ -2,6 +2,8 @@ import 'package:delete/zoomable_image_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_manager/photo_manager.dart';
 
+import 'colors.dart';
+
 class ImagePreviewPage extends StatefulWidget {
   final List<AssetEntity> images;
   final int index;
@@ -34,12 +36,15 @@ class _ImagePreviewPageState extends State<ImagePreviewPage> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        backgroundColor: Colors.black,
-        foregroundColor: Colors.white,
+        leading: GestureDetector(onTap: () {
+          Navigator.pop(context);
+        }, child: Icon(Icons.keyboard_arrow_left)),
+        backgroundColor: color00C853,
+        foregroundColor: Colors.black,
         title: Text('${_currentIndex + 1} / ${widget.images.length}'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.delete),
+            icon: const Icon(Icons.delete,color: colorFF0E00,),
             onPressed: () => _showDeleteDialog(),
           ),
         ],
